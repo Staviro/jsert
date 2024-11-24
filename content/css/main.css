@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "primary";
+  src: url("../fonts/DMSans-VariableFont_opsz,wght.ttf");
+}
+body {
+  margin: 0;
+  font-family: "primary";
+  font-display: swap;
+  font-size: 16px;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+body input, body button {
+  font-family: "primary";
+  font-size: 16px;
+}
+
+html {
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.text-light {
+  color: #333;
+}
+
+.not-anchor {
+  text-decoration: none;
+}
+
+.section-header {
+  padding: 8px 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.text-block {
+  padding: 8px 0;
+  margin: 0;
+}
+
+.code {
+  white-space: pre;
+  overflow-x: auto;
+  padding: 16px;
+  background-color: #F7F7F7;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 16px;
+}
+
+.img-fluid {
+  width: 100%;
+  box-sizing: border-box;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+nav {
+  border: 1px solid #eee;
+}
+nav .nav-brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+nav .nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.btn {
+  display: flex;
+  padding: 8px 20px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: #D12750;
+  color: white;
+  border: 1px solid #D12750;
+  outline: none;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  color: black;
+  border-color: black;
+}
+
+.landing-banner {
+  padding: 72px 0;
+  text-align: center;
+  background: linear-gradient(45deg, #FFF6C9, #EED8FF, #FFDAE7);
+}
+.landing-banner h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 56px;
+  font-weight: bold;
+}
+.landing-banner .banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+footer {
+  border-top: 1px solid #eee;
+  padding: 8px 0;
+}
+footer .footer-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+footer .footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+footer .footer-links a {
+  color: black;
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    text-align: center;
+    align-items: center;
+  }
+  footer .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,19 @@
+@import '../../shared/variables';
+
+nav {
+    border: 1px solid #eee;
+
+    .nav-brand {
+        font-size: 22px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+    }
+
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+    }
+}

@@ -1,0 +1,20 @@
+footer {
+    border-top: 1px solid #eee;
+    padding: 8px 0;
+    .footer-title {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+        a {
+            color: black;
+        }
+    }
+}
+
+@import './footer.responsive';

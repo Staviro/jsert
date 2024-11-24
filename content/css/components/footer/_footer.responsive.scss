@@ -1,0 +1,11 @@
+@media screen and (max-width: 767px) {
+    footer {
+        text-align: center;
+        align-items: center;
+
+        .footer-links {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+}

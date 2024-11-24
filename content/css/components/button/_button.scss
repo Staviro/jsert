@@ -1,0 +1,20 @@
+@import '../../shared/variables';
+
+.btn {
+    display: flex;
+    padding: 8px 20px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary;
+    color: white;
+    border: 1px solid $color-primary;
+    outline: none;
+    width: fit-content;
+}
+
+.btn-transparent {
+   background-color: transparent;
+   color: black;
+   border-color: black; 
+}

@@ -3,9 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./content/css/main.css">
     <title>Jsert</title>
 </head>
 <body>
+    <main>
+        <header>
+            <nav>
+                <div class="container">
+                    <div class="nav-content">
+                        <a class="nav-brand" href="/" title="home">Jsert</a>
+                        <a class="btn" href="https://github.com/Staviro/jsert/" title="Github" target="_blank">Github</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="landing-banner">
+            <div class="container">
+                <div class="banner-content">
+                    <div class="banner-title">
+                        <h2>FAST</h2>
+                        <h2>SIMPLE</h2>
+                        <h2>FLEXIBLE</h2>
+                    </div>
+                    <p class="text-light">Jsert is a lightweight JavaScript for writing unit tests for web applications. 
+                        It offers a lot of flexibility in terms of how developers right unit tests with little to no restrictions.</p>        
+                    <a class="btn btn-transparent not-anchor" href="#documentation" title="get started">Get Started</a>
+                </div>
+            </div>
+        </section>
+        <section class="version-control">
+            <div class="container">
+                <h3 class="section-header">
+                    Version Control
+                </h3>
+                <p class="text-block text-light">
+                    Jsert is currently on version beta. 
+                    The library is currently in the testing phase but it is stable. 
+                    Hoping to ensure a good experience for developing and also looking at more exciting features!
+                </p>
+                <p class="text-block text-light">
+                    The beta version Jsert file may be updated regularly. 
+                    This is to ensure that the best is added to this library and developers can more out of it. 
+                    Changes can be made to the beta file without versioning.
+                </p>
+                <p class="text-block text-light">
+                    You can download the stable beta version here. <br/>
+                    Or you can view the source code here.
+                </p>
+            </div>
+        </section>
+        <section id="documentation" class="documentation">
+            <div class="container">
+                <h3 class="section-header">
+                    Documentation
+                </h3>
+                <p class="text-block text-light">
+                    View the all documentation for the current beta version
+                </p>
+                <p class="text-block text-light">
+                    This documentation may change frequently from time to time. 
+                    Aiming to make the documentation easier to read and up to date with all the latest changes. 
+                    Changes to the documentation will not have versions, if the documentation is different from what the beta version has, 
+                    please download the latest beta version and use the documentation to do your updates.
+                </p>
+                <p class="text-block text-light">
+                    Please ensure that you have added the Jsert file to your project and your website.
+                </p>
+                <p class="code">const jsert = new Jsert();
+jsert.add('Variable called name is type of string should pass', function() {
+    let name = "John";
+    if (typeof(name) == "string") jsert.pass(this);
+    else jsert.fail(this);
+
+jsert.add("Variable called user is type of object should pass", function() {
+    let user = {};
+    if (typeof(user) == 'object') jsert.pass(this);
+    else jsert.fail(this);
+
+jsert.run();</p>
+                <p class="text-block text-light">
+                    The above code example creates an instance of the Jsert object. <br/><br/>
+                    
+                    On the next line, it uses the jsert variable and adds a test method to the object.<br/><br/>
+
+                    The add() method accepts 2 arguments, name and test respectively.<br/><br/>
+
+                    Method signature looks like the below...<br/>
+                    add(name: string, test: function)<br/>
+
+                    **It is important to note that you need to specify the pass and fail scenarios inside your tests.<br/><br/>
+
+                    e.g<br/>
+                    if (condition) jsert.pass(this);<br/>
+                    else jsert.fail(this);<br/><br/>
+
+                    At the end when all tests are added, the last step is to execute all tests using the run() method.
+                </p>
+                <p class="text-block text-light">
+                    The below image is the result of running tests. All information is logged to the console.
+                </p>
+                <img class="img-fluid" src="./content/images/jsert-sample.png" />
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <p class="text-block footer-title">
+                    Jsert
+                </p>
+                <p class="text-block text-light">
+                    Jsert is a lightweight JavaScript for writing unit tests for web applications. It offers a lot of flexibility in terms of how developers right unit tests with little to no restrictions.
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/Staviro/jsert/blob/main/License.txt" target="_blank" title="license">License</a>
+                    <a href="https://github.com/Staviro/jsert/" target="_blank" title="Github">Github</a>
+                </div>
+                <p class="text-block">
+                    &copy; Jsert 2024
+                </p>
+            </div>
+        </footer>
+    </main>
     <script src="./jsert.js"></script>
     <script src="./jsert.example.js"></script>
 </body>
