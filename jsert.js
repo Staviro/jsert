@@ -34,14 +34,14 @@ class Jsert {
      * Runs all tests added to the tests list
      */
     run() {
-        console.log("Jsert Running Tests...");
-        let label = "%cCompleted In";
+        let label = "Completed In";
         console.time(label);
+        console.log("Jsert Running Tests...");
         this.tests.forEach(function(t) { t.test() });
         console.log("Jsert Completed Running Tests");
-        console.log("Loading summary...");
         this.summary();
-        console.timeLog(label, this._green());
+        console.timeEnd(label, this._green());
+        this.reset();
     }
     /**
      * Adds test to the tests list
@@ -59,9 +59,17 @@ class Jsert {
      */
     summary() {
         let style = this._green();
-        console.log(`%cTotal Tests Executed: ${ this.passed.length + this.failed.length }`, style);
-        console.log(`%cTotal Tests Passed: ${ this.passed.length}`, style);
-        console.log(`%cTotal Tests Failed: ${ this.failed.length}`, style);
+        console.log("Loading summary...");
+        console.log(`%cTotal Tests Executed :${ this.passed.length + this.failed.length }`, style);
+        console.log(`%cTotal Tests Passed   :${ this.passed.length}`, style);
+        console.log(`%cTotal Tests Failed   :${ this.failed.length}`, style);
+    }
+    /**
+     * Resets all test results
+     */
+    reset() {
+        this.passed = [];
+        this.failed = [];   
     }
     _green() {
         return "color:#5f5;"
