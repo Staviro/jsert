@@ -8,7 +8,13 @@
  * Class for creating Jsert objects
  */
 class Jsert {
-    constructor() {
+    /**
+     * Creates an instance of the Jsert class
+     * @param {string} group 
+     * @returns 
+     */
+    constructor(group) {
+        this.group = group;
         this.tests = [];
         this.passed = [];
         this.failed = [];
@@ -35,10 +41,13 @@ class Jsert {
      */
     run() {
         let label = "Completed In";
+        let b = this._blue();
         console.time(label);
-        console.log("Jsert Running Tests...");
+        console.log("%cJsert instance info", b);
+        console.log(`%cGroup Name: ${this.group}`, b);
+        console.log("Jsert Running Tests");
         this.tests.forEach(function(t) { t.test() });
-        console.log("Jsert Completed Running Tests");
+        console.log("%cJsert Completed Running Tests", b);
         this.summary();
         console.timeEnd(label, this._green());
         this.reset();
@@ -59,7 +68,7 @@ class Jsert {
      */
     summary() {
         let style = this._green();
-        console.log("Loading summary...");
+        console.log("Loading summary");
         console.log(`%cTotal Tests Executed :${ this.passed.length + this.failed.length }`, style);
         console.log(`%cTotal Tests Passed   :${ this.passed.length}`, style);
         console.log(`%cTotal Tests Failed   :${ this.failed.length}`, style);

@@ -1,4 +1,4 @@
-const jsert = new Jsert();
+const jsert = new Jsert("Example tests");
 
 jsert.add('Variable called name is type of string should pass', function() {
     let name = "John";
