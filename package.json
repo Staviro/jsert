@@ -1,0 +1,20 @@
+{
+  "name": "jsert",
+  "version": "1.0.0",
+  "description": "Jsert is a lightweight JavaScript for writing unit tests for web applications. It offers a lot of flexibility in terms of how developers right unit tests with little to no restrictions.",
+  "homepage": "https://github.com/Staviro/jsert#readme",
+  "bugs": {
+    "url": "https://github.com/Staviro/jsert/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Staviro/jsert.git"
+  },
+  "license": "MIT",
+  "author": "Joseph Morukhuladi",
+  "type": "module",
+  "main": "jsert.js",
+  "scripts": {
+    "jsert": "node tests.jsert.mjs"
+  }
+}

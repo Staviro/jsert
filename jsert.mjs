@@ -3,7 +3,7 @@
  *(c) 2024 Joseph Morukhuladi
  *Licensed under MIT
  */
-class Jsert {
+export class Jsert {
   /**
    * Creates an instance of the Jsert class
    * @param {string} group
