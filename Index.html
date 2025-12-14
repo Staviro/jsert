@@ -29,9 +29,12 @@
                         <h2>SIMPLE</h2>
                         <h2>FLEXIBLE</h2>
                     </div>
-                    <p class="text-light">Jsert is a lightweight JavaScript for writing unit tests for web applications.
-                        It offers a lot of flexibility in terms of how developers right unit tests with little to no
-                        restrictions.</p>
+                    <p class="text-light">Jsert is a lightweight JavaScript library for writing unit tests for
+                        JavaScript code.
+                        It is designed to be simple and easy to use, allowing developers to quickly create and run tests
+                        for
+                        their code.
+                        You can test code on the client side (browser) or server side (Node.js).</p>
                     <a class="btn btn-transparent not-anchor" href="#documentation" title="get started">Get Started</a>
                 </div>
             </div>
@@ -75,34 +78,30 @@
                 <p class="text-block text-light">
                     Please ensure that you have added the Jsert file to your project and your website.
                 </p>
-                <p class="code">const jsert = new Jsert();
-                    jsert.add('Variable called name is type of string should pass', function() {
-                        let name = "John";
-                        if (typeof(name) == "string") jsert.pass(this);
-                        else jsert.fail(this);
+                <textarea class="code" rows="10" readonly>
+const jsert = new Jsert('Sample tests');
+jsert.test("passWhenEquals() should pass when type of name is 'string'",
+function () {
+    let name = "John";
+    jsert.passWhenEquals(this, typeof name, "string");
+});
 
-                    jsert.add("Variable called user is type of object should pass", function() {
-                        let user = {};
-                        if (typeof(user) == 'object') jsert.pass(this);
-                        else jsert.fail(this);
-
-                    jsert.run();</p>
+jsert.run();</textarea>
                 <p class="text-block text-light">
                     The above code example creates an instance of the Jsert object. <br /><br />
 
                     On the next line, it uses the jsert variable and adds a test method to the object.<br /><br />
 
-                    The add() method accepts 2 arguments, name and test respectively.<br /><br />
+                    The test() method accepts 2 arguments, name and test respectively.<br /><br />
 
                     Method signature looks like the below...<br />
-                    add(name: string, test: function)<br />
+                    test(name: string, test: function)<br />
 
                     **It is important to note that you need to specify the pass and fail scenarios inside your
                     tests.<br /><br />
 
                     e.g<br />
-                    if (condition) jsert.pass(this);<br />
-                    else jsert.fail(this);<br /><br />
+                    jsert.passWhenEquals(this, actual, expected);<br /><br />
 
                     At the end when all tests are added, the last step is to execute all tests using the run() method.
                 </p>
@@ -118,8 +117,10 @@
                     Jsert
                 </p>
                 <p class="text-block text-light">
-                    Jsert is a lightweight JavaScript for writing unit tests for web applications. It offers a lot of
-                    flexibility in terms of how developers right unit tests with little to no restrictions.
+                    Jsert is a lightweight JavaScript library for writing unit tests for JavaScript code.
+                    It is designed to be simple and easy to use, allowing developers to quickly create and run tests for
+                    their code.
+                    You can test code on the client side (browser) or server side (Node.js).
                 </p>
                 <div class="footer-links">
                     <a href="https://github.com/Staviro/jsert/blob/main/License.txt" target="_blank"
