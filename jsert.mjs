@@ -1,6 +1,6 @@
 /**
  *Jsert beta
- *(c) 2024 Joseph Morukhuladi
+ *(c) 2026 Joseph Morukhuladi
  *Licensed under MIT
  */
 export class Jsert {
@@ -16,12 +16,12 @@ export class Jsert {
   }
 
   pass(test) {
-    console.log(`%cTest Passed    :${test["name"]}`, this._green());
+    console.log(`%c${this._pad("Test Passed")}:${test["name"]}`, this._green());
     this.passed.push(test["name"]);
   }
 
   fail(test) {
-    console.log(`%cTest Failed    :${test["name"]}`, this._red());
+    console.log(`%c${this._pad("Test Failed")}:${test["name"]}`, this._red());
     this.failed.push(test["name"]);
   }
 
@@ -175,7 +175,7 @@ export class Jsert {
     let label = " ~ Completed In";
     let b = this._blue();
     console.time(label);
-    console.log(`%c ~ Executing   :${this.group}`, b);
+    console.log(`%c${this._pad(" ~ Executing")}:${this.group}`, b);
     for (const t of this.tests) {
       t.test();
     }
@@ -193,16 +193,18 @@ export class Jsert {
   }
 
   summary() {
-    let style = this._green();
+    const style = this._green();
     console.log(" ~ Generating summary");
     console.log(
-      `%cTests Executed :${this.passed.length + this.failed.length}`,
-      style
+      `%c${this._pad("Tests Executed")}:${
+        this.passed.length + this.failed.length
+      }`,
+      style,
     );
-    console.log(`%cTests Passed   :${this.passed.length}`, style);
+    console.log(`%c${this._pad("Tests Passed")}:${this.passed.length}`, style);
     console.log(
-      `%cTests Failed   :${this.failed.length}`,
-      this.failed.length > 0 ? this._red() : style
+      `%c${this._pad("Tests Failed")}:${this.failed.length}`,
+      this.failed.length > 0 ? this._red() : style,
     );
   }
 
@@ -221,5 +223,8 @@ export class Jsert {
   }
   _blue() {
     return "color:#99f;";
+  }
+  _pad(val) {
+    return val.padEnd(16);
   }
 }
