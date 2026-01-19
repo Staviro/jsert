@@ -166,11 +166,18 @@ export class Jsert {
     return true;
   };
 
+  /**
+   *  Asserts that 2 objects match in structure and values
+   * @param {*} test
+   */
   passWhenMatch(test, obj1, obj2) {
     if (this.isMatch(obj1, obj2)) this.pass(test);
     else this.fail(test);
   }
 
+  /**
+   * Runs all tests in the current group
+   */
   run() {
     let label = " ~ Completed In";
     let b = this._blue();
@@ -182,9 +189,12 @@ export class Jsert {
     this.summary();
     console.timeEnd(label, this._green());
     console.log();
-    this.reset();
+    return this;
   }
 
+  /**
+   * Adds a test to the current group
+   */
   test(name, test) {
     this.tests.push({
       name,
@@ -192,6 +202,9 @@ export class Jsert {
     });
   }
 
+  /**
+   * Generates a summary of test results
+   */
   summary() {
     const style = this._green();
     console.log(" ~ Generating summary");
@@ -208,11 +221,25 @@ export class Jsert {
     );
   }
 
+  /**
+   * Resets the current test group
+   */
   reset() {
     this.passed = [];
     this.failed = [];
     this.group = null;
     this.tests = [];
+  }
+
+  getJSONReport() {
+    return {
+      report: {
+        group: this.group,
+        totalTests: this.passed.length + this.failed.length,
+        passed: this.passed.length,
+        failed: this.failed.length,
+      },
+    };
   }
 
   _green() {
